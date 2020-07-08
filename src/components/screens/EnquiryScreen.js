@@ -2,10 +2,10 @@ import React, {useEffect} from 'react';
 import {
   View,
   Text,
-  ScrollView,
-  RefreshControl,
   StyleSheet,
   ActivityIndicator,
+  FlatList,
+  SafeAreaView,
 } from 'react-native';
 import {connect, useDispatch} from 'react-redux';
 import {getEnquires} from '../../store/actions/enquiry';
@@ -46,8 +46,7 @@ const EnquiryScreen = (props) => {
   };
 
   return (
-    <ScrollView
-      refreshControl={<RefreshControl onRefresh={props.getEnquires} />}>
+    <SafeAreaView>
       {errors && errors.length ? (
         <View style={styles.loaderWarpper}>
           {errors.map(({message}, i) => (
@@ -57,15 +56,21 @@ const EnquiryScreen = (props) => {
           ))}
         </View>
       ) : (
-        dataList?.map(({enqId, ...item}) => (
-          <ListItem
-            key={enqId}
-            data={{enqId, ...item}}
-            onPress={handleOnPress(enqId)}
-          />
-        ))
+        <FlatList
+          keyExtractor={(data) => data.enqId}
+          renderItem={({item}) => {
+            const {enqId, ...data} = item || {};
+            return (
+              <ListItem
+                onPress={handleOnPress(enqId)}
+                data={{enqId, ...data}}
+              />
+            );
+          }}
+          data={dataList}
+        />
       )}
-    </ScrollView>
+    </SafeAreaView>
   );
 };
 
