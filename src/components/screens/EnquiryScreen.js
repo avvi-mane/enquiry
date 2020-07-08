@@ -1,4 +1,7 @@
+// @flow
+
 import React, {useEffect} from 'react';
+import {NavigationScreenProp, NavigationState} from '@react-navigation/native';
 import {
   View,
   Text,
@@ -26,7 +29,47 @@ const styles = StyleSheet.create({
   },
 });
 
-const EnquiryScreen = (props) => {
+type Item = {
+  enqId: number,
+  name: string,
+  postedOn: string,
+  categoryName: string,
+  location: string,
+  classLocPref: string,
+  phoneNumber: string,
+};
+
+type FlowListItem = {
+  item: Item,
+};
+
+type ErrorItem = {
+  message: string,
+};
+
+type InitialState = {
+  dataList: Array<Item>,
+  isLoading: boolean,
+  errors: Array<ErrorItem>,
+};
+
+type ReducerState = {
+  enquiryReducer: InitialState,
+};
+
+type Props = {
+  navigation: NavigationScreenProp<NavigationState>,
+  getEnquires: Function,
+  dataList: Array<Item>,
+  isLoading: boolean,
+  errors: Array<ErrorItem>,
+};
+
+type DispatchItems = {
+  getEnquires: Function,
+};
+
+const EnquiryScreen: (Props) => React$Node = (props) => {
   const dispatch = useDispatch();
   const {dataList, isLoading, navigation, errors} = props;
   useEffect(() => {
@@ -40,7 +83,7 @@ const EnquiryScreen = (props) => {
     );
   }
 
-  const handleOnPress = (enqId) => () => {
+  const handleOnPress = (enqId: number): Function => (): void => {
     dispatch({type: GET_BY_ID, enqId});
     navigation.navigate(ENQUIRY_DETAILS_SCREEN);
   };
@@ -58,14 +101,9 @@ const EnquiryScreen = (props) => {
       ) : (
         <FlatList
           keyExtractor={(data) => data.enqId.toString()}
-          renderItem={({item}) => {
-            const {enqId, ...data} = item || {};
-            return (
-              <ListItem
-                onPress={handleOnPress(enqId)}
-                data={{enqId, ...data}}
-              />
-            );
+          renderItem={({item}: FlowListItem): React$Node => {
+            const {enqId} = item;
+            return <ListItem onPress={handleOnPress(enqId)} data={item} />;
           }}
           data={dataList}
         />
@@ -74,7 +112,7 @@ const EnquiryScreen = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: ReducerState): InitialState => {
   return {
     dataList: state?.enquiryReducer?.dataList,
     isLoading: state?.enquiryReducer?.isLoading,
@@ -82,7 +120,7 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = {
+const mapDispatchToProps: DispatchItems = {
   getEnquires,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(EnquiryScreen);

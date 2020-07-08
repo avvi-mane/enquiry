@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import {TouchableOpacity, Text, View, StyleSheet} from 'react-native';
 import {timeSince, getDateObject, callUser} from '../config/util';
@@ -18,7 +20,21 @@ const styles = StyleSheet.create({
   actionWrapper: {margin: 16, minWidth: 100},
 });
 
-const ListItem = ({data, onPress}) => {
+type Item = {
+  name: string,
+  postedOn: string,
+  categoryName: string,
+  location: string,
+  classLocPref: string,
+  phoneNumber: string,
+};
+
+type Props = {
+  data: Item,
+  onPress: Function,
+};
+
+const ListItem: (Props) => React$Node = ({data, onPress}) => {
   const {
     name,
     postedOn,
@@ -41,7 +57,7 @@ const ListItem = ({data, onPress}) => {
         <View style={styles.actionWrapper}>
           <Text>{timeSince(getDateObject(postedOn))} ago</Text>
           <IconButton onPress={callUser(phoneNumber)}>
-            <PhoneIcon width="32" height="32" />
+            <PhoneIcon width={32} height={32} />
           </IconButton>
         </View>
       </View>

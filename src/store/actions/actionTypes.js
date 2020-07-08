@@ -1,3 +1,5 @@
+// @flow
+
 export const GET_ENQUIRES = 'GET_ENQUIRES';
 export const SET_ENQUIRES_SUCCESS = 'SET_ENQUIRES_SUCCESS';
 export const SET_ENQUIRES_FAILED = 'SET_ENQUIRES_FAILED';

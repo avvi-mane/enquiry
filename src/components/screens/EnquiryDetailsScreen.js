@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import {connect} from 'react-redux';
 import {View, Text, StyleSheet} from 'react-native';
@@ -7,6 +9,7 @@ import IconButton from '../IconButton';
 import PhoneIcon from '../svg/PhoneIcon';
 import {Avatar} from '../Avatar';
 import Title from '../Title';
+import stringify from 'json-stable-stringify';
 const styles = StyleSheet.create({
   container: {flex: 1},
   itemWrapper: {
@@ -25,7 +28,27 @@ const styles = StyleSheet.create({
   infoWrapper: {marginVertical: 16, flex: 1, justifyContent: 'center'},
   actionWrapper: {margin: 16, flex: 1},
 });
-const EnquiryDetailsScreen = (props) => {
+
+type Item = {
+  enqId: number,
+  name: string,
+  isStarted: Boolean,
+  phoneNumber: stringify,
+  isFree: boolean,
+  categoryName: string,
+  classLocPref: string,
+  createdOn: string,
+  location: string,
+  postedOn: string,
+  providerType: string,
+  tag: string,
+};
+
+type Props = {
+  item: Item,
+};
+
+const EnquiryDetailsScreen: (Props) => React$Node = (props) => {
   const {item} = props;
   const {name, enqId, isStarted, phoneNumber, isFree} = item;
   const displayData = [
@@ -52,7 +75,7 @@ const EnquiryDetailsScreen = (props) => {
           <Text>{isFree ? 'Free' : 'Paid'}</Text>
         </View>
         <IconButton onPress={callUser(phoneNumber)}>
-          <PhoneIcon width="32" height="32" />
+          <PhoneIcon width={32} height={32} />
         </IconButton>
       </View>
       <ScrollView>

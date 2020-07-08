@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import {TouchableOpacity, StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
@@ -11,7 +12,12 @@ const styles = StyleSheet.create({
   },
 });
 
-const IconButton = ({children, onPress}) => (
+type Props = {
+  children: React$Node,
+  onPress: Function,
+};
+
+const IconButton: (Props) => React$Node = ({children, onPress}) => (
   <TouchableOpacity style={styles.wrapper} onPress={onPress}>
     {children}
   </TouchableOpacity>

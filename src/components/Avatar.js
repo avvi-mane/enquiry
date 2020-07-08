@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 import {stringToColour} from '../config/util';
@@ -14,7 +16,11 @@ const styles = StyleSheet.create({
   avatarText: {color: '#FFF'},
 });
 
-export const Avatar = ({children}) => {
+type Props = {
+  children: string,
+};
+
+export const Avatar: (Props) => React$Node = ({children}) => {
   return (
     <View
       style={{

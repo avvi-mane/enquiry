@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import {Text, StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
@@ -7,7 +9,11 @@ const styles = StyleSheet.create({
   },
 });
 
-const Title = ({children}) => {
+type Props = {
+  children: React$Node,
+};
+
+const Title: (Props) => React$Node = ({children}) => {
   return <Text style={styles.title}>{children}</Text>;
 };
 
