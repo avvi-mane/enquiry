@@ -57,7 +57,7 @@ const EnquiryScreen = (props) => {
         </View>
       ) : (
         <FlatList
-          keyExtractor={(data) => data.enqId}
+          keyExtractor={(data) => data.enqId.toString()}
           renderItem={({item}) => {
             const {enqId, ...data} = item || {};
             return (
