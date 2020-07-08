@@ -1,21 +1,33 @@
-import {GET_ENQUIRES, SET_ENQUIRES, API} from '../actions/actionTypes';
+import {
+  GET_ENQUIRES,
+  SET_ENQUIRES_SUCCESS,
+  SET_ENQUIRES_FAILED,
+  API,
+} from '../actions/actionTypes';
 const baseURL = 'http://www.mocky.io';
 
 export const getEnquires = () => {
   return apiAction({
     url: `${baseURL}/v2/5c41920e0f0000543fe7b889`,
-    onSuccess: setEnquires,
-    onFailure: (err) => console.log('Error occured loading articles', err),
+    onSuccess: getEnquiresSuccess,
+    onFailure: getEnquiresFailure,
     label: GET_ENQUIRES,
   });
 };
 
-function setEnquires(data) {
+const getEnquiresSuccess = (data) => {
   return {
-    type: SET_ENQUIRES,
+    type: SET_ENQUIRES_SUCCESS,
     payload: data,
   };
-}
+};
+
+const getEnquiresFailure = (data) => {
+  return {
+    type: SET_ENQUIRES_FAILED,
+    payload: data,
+  };
+};
 
 const apiAction = ({
   url = '',
