@@ -1,19 +1,23 @@
+// @flow
+
 import {Platform, Linking, Alert} from 'react-native';
 
-export const stringToColour = (str) => {
+export const stringToColour: (string) => string = (str) => {
   let hash = 0;
   for (let i = 0; i < str.length; i++) {
+    /*eslint-disable no-bitwise*/
     hash = str.charCodeAt(i) + ((hash << 5) - hash);
   }
   let colour = '#';
   for (let i = 0; i < 3; i++) {
+    /*eslint-disable no-bitwise*/
     let value = (hash >> (i * 8)) & 0xff;
     colour += ('00' + value.toString(16)).substr(-2);
   }
   return colour;
 };
 
-export const timeSince = (date) => {
+export const timeSince: (Date) => string = (date) => {
   var seconds = Math.floor((new Date() - date) / 1000);
 
   var interval = Math.floor(seconds / 31536000);
@@ -40,12 +44,12 @@ export const timeSince = (date) => {
   return Math.floor(seconds) + ' seconds';
 };
 
-export const getDateObject = (strDate) => {
+export const getDateObject: (string) => Date = (strDate) => {
   const arrDate = strDate.split('/');
   return new Date(`${arrDate[2]}-${arrDate[1]}-${arrDate[0]}`);
 };
 
-export const callNumber = (phone) => {
+export const callNumber: (string) => void = (phone) => {
   let phoneNumber = phone;
   if (Platform.OS !== 'android') {
     phoneNumber = `telprompt:${phone}`;
@@ -63,6 +67,6 @@ export const callNumber = (phone) => {
     .catch((err) => console.log(err));
 };
 
-export const callUser = (number) => () => {
-  callNumber(number);
+export const callUser: (string) => () => void = (phone) => () => {
+  callNumber(phone);
 };

@@ -1,3 +1,5 @@
+// @flow
+
 import {
   GET_ENQUIRES,
   SET_ENQUIRES_SUCCESS,
@@ -15,14 +17,21 @@ export const getEnquires = () => {
   });
 };
 
-const getEnquiresSuccess = (data) => {
+type Item = {};
+
+type ActionType = {
+  type: string,
+  payload: Item,
+};
+
+const getEnquiresSuccess: (Item) => ActionType = (data) => {
   return {
     type: SET_ENQUIRES_SUCCESS,
     payload: data,
   };
 };
 
-const getEnquiresFailure = (data) => {
+const getEnquiresFailure: (Item) => ActionType = (data) => {
   return {
     type: SET_ENQUIRES_FAILED,
     payload: data,

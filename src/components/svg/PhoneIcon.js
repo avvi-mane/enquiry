@@ -1,9 +1,15 @@
+// @flow
 import React from 'react';
 import Svg, {Path} from 'react-native-svg';
 
-const PhoneIcon = (props) => {
+type Props = {
+  height: number,
+  width: number,
+};
+
+const PhoneIcon: (Props) => React$Node = ({width, height}) => {
   return (
-    <Svg viewBox="0 0 512 512" width={32} height={32} {...props}>
+    <Svg viewBox="0 0 512 512" width={width || 32} height={height || 32}>
       <Path
         stroke="#000"
         fill="#000"

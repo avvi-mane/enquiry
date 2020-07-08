@@ -1,8 +1,35 @@
+// @flow
+
 import axios from 'axios';
 import {API} from '../actions/actionTypes';
 import {apiError, apiStart, apiEnd} from '../actions/api';
 
-const apiMiddleware = ({dispatch}) => (next) => (action) => {
+type Data = {};
+
+type Headers = {};
+
+type Payload = {
+  url: string,
+  method: string,
+  data: Data,
+  onSuccess: Function,
+  onFailure: Function,
+  label: string,
+  headers: Headers,
+};
+
+type Action = {
+  type: string,
+  payload: Payload,
+};
+
+type Props = {
+  dispatch: Function,
+};
+
+const apiMiddleware: (Props) => (Function) => (Action) => void = ({
+  dispatch,
+}) => (next) => (action) => {
   next(action);
 
   if (action.type !== API) {
@@ -19,7 +46,9 @@ const apiMiddleware = ({dispatch}) => (next) => (action) => {
     headers,
   } = action.payload;
 
-  const dataOrParams = ['GET', 'DELETE'].includes(method) ? 'params' : 'data';
+  const dataOrParams: string = ['GET', 'DELETE'].includes(method)
+    ? 'params'
+    : 'data';
 
   // axios default configs
   axios.defaults.baseURL = process.env.REACT_APP_BASE_URL || '';
