@@ -29,3 +29,7 @@ Run on emulator using
 
     npx react-native run-ios
 
+Run test using jest
+
+    yarn test
+
