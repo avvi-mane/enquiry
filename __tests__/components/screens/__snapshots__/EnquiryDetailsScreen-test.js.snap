@@ -1,0 +1,470 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EnquiryDetailsScreen Component Should compare snapshot 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#d4b5b0",
+        "borderBottomColor": "rgba(0,0,0, .2)",
+        "flexDirection": "row",
+        "justifyContent": "flex-start",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#9266c9",
+          "borderRadius": 50,
+          "height": 40,
+          "justifyContent": "center",
+          "margin": 16,
+          "width": 40,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#FFF",
+          }
+        }
+      >
+        A
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "justifyContent": "center",
+          "marginVertical": 16,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 18,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Arjun
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#d4b5b0",
+        "borderBottomColor": "rgba(0,0,0, .2)",
+        "flexDirection": "row",
+        "justifyContent": "flex-start",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "margin": 16,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 18,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Enquiry Id: 
+        4567
+      </Text>
+      <Text>
+        Not
+         Started
+      </Text>
+      <Text>
+        Free
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 50,
+          "height": 40,
+          "justifyContent": "center",
+          "margin": 16,
+          "opacity": 1,
+          "width": 40,
+        }
+      }
+    >
+      <RNSVGSvgView
+        align="xMidYMid"
+        bbHeight={32}
+        bbWidth={32}
+        focusable={false}
+        height={32}
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "borderWidth": 0,
+            },
+            Object {
+              "flex": 0,
+              "height": 32,
+              "width": 32,
+            },
+          ]
+        }
+        vbHeight={512}
+        vbWidth={512}
+        width={32}
+      >
+        <RNSVGGroup>
+          <RNSVGPath
+            d="M352 0H160c-22.08.026-39.974 17.92-40 40v432c.026 22.08 17.92 39.974 40 40h192c22.08-.026 39.974-17.92 40-40V40c-.026-22.08-17.92-39.974-40-40zm24 472c0 13.255-10.745 24-24 24H160c-13.255 0-24-10.745-24-24v-48h240v48zm0-64H136V88h240v320zm0-336H136V40c0-13.255 10.745-24 24-24h192c13.255 0 24 10.745 24 24v32z"
+            fill={4278190080}
+            propList={
+              Array [
+                "fill",
+                "stroke",
+              ]
+            }
+            stroke={4278190080}
+          />
+          <RNSVGPath
+            d="M256 432c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm0 32a8 8 0 110-16 8 8 0 010 16zM288 40h-64a8 8 0 000 16h64a8 8 0 000-16zM352 376h-8a8 8 0 000 16h8a8 8 0 000-16zM320 376h-8a8 8 0 000 16h8a8 8 0 000-16zM288 376h-8a8 8 0 000 16h8a8 8 0 000-16z"
+            fill={4278190080}
+            propList={
+              Array [
+                "fill",
+                "stroke",
+              ]
+            }
+            stroke={4278190080}
+          />
+        </RNSVGGroup>
+      </RNSVGSvgView>
+    </View>
+  </View>
+  <RCTScrollView>
+    <View>
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderBottomColor": "rgba(0,0,0, .2)",
+            "flexDirection": "row",
+            "justifyContent": "flex-start",
+            "opacity": 1,
+            "paddingHorizontal": 16,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "justifyContent": "center",
+              "marginVertical": 16,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 18,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            Phone Number
+          </Text>
+          <Text>
+            +919878989898
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderBottomColor": "rgba(0,0,0, .2)",
+            "flexDirection": "row",
+            "justifyContent": "flex-start",
+            "paddingHorizontal": 16,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "justifyContent": "center",
+              "marginVertical": 16,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 18,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            Location
+          </Text>
+          <Text>
+            Home
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderBottomColor": "rgba(0,0,0, .2)",
+            "flexDirection": "row",
+            "justifyContent": "flex-start",
+            "paddingHorizontal": 16,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "justifyContent": "center",
+              "marginVertical": 16,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 18,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            Category
+          </Text>
+          <Text>
+            
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderBottomColor": "rgba(0,0,0, .2)",
+            "flexDirection": "row",
+            "justifyContent": "flex-start",
+            "paddingHorizontal": 16,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "justifyContent": "center",
+              "marginVertical": 16,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 18,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            Class Location Preference
+          </Text>
+          <Text>
+            
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderBottomColor": "rgba(0,0,0, .2)",
+            "flexDirection": "row",
+            "justifyContent": "flex-start",
+            "paddingHorizontal": 16,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "justifyContent": "center",
+              "marginVertical": 16,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 18,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            Created On
+          </Text>
+          <Text>
+            
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderBottomColor": "rgba(0,0,0, .2)",
+            "flexDirection": "row",
+            "justifyContent": "flex-start",
+            "paddingHorizontal": 16,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "justifyContent": "center",
+              "marginVertical": 16,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 18,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            Posted On
+          </Text>
+          <Text>
+            
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderBottomColor": "rgba(0,0,0, .2)",
+            "flexDirection": "row",
+            "justifyContent": "flex-start",
+            "paddingHorizontal": 16,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "justifyContent": "center",
+              "marginVertical": 16,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 18,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            Provider
+          </Text>
+          <Text />
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderBottomColor": "rgba(0,0,0, .2)",
+            "flexDirection": "row",
+            "justifyContent": "flex-start",
+            "paddingHorizontal": 16,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "justifyContent": "center",
+              "marginVertical": 16,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 18,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            Tag
+          </Text>
+          <Text>
+            
+          </Text>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;

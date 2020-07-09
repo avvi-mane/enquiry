@@ -61,10 +61,10 @@ export const callNumber: (string) => void = (phone) => {
       if (!supported) {
         Alert.alert(`Unable to call ${phone}`);
       } else {
-        return Linking.openURL(phoneNumber);
+        Linking.openURL(phoneNumber);
       }
     })
-    .catch((err) => console.log(err));
+    .catch(console.log);
 };
 
 export const callUser: (string) => () => void = (phone) => () => {

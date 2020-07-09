@@ -2,14 +2,19 @@
 
 import React from 'react';
 import {connect} from 'react-redux';
-import {View, Text, StyleSheet} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
 import {callUser} from '../../config/util';
-import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 import IconButton from '../IconButton';
 import PhoneIcon from '../svg/PhoneIcon';
 import {Avatar} from '../Avatar';
 import Title from '../Title';
-import stringify from 'json-stable-stringify';
+
 const styles = StyleSheet.create({
   container: {flex: 1},
   itemWrapper: {
