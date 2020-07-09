@@ -33,6 +33,10 @@ Run test using jest
 
     yarn test
 
+Run flow server
+
+    yarn flow
+
 #### Coding Standards.
 * Flow has been added for static type checking in javascript. Please use // @flow in the beginning of every file and add the flow-types.
 * Write unit test cases using jest. Examples in the __tests__ dir. Mocks in __mocks__ dir.

@@ -38,7 +38,7 @@ type Item = {
   enqId: number,
   name: string,
   isStarted: Boolean,
-  phoneNumber: stringify,
+  phoneNumber: string,
   isFree: boolean,
   categoryName: string,
   classLocPref: string,
