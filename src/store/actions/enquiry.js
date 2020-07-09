@@ -24,14 +24,14 @@ type ActionType = {
   payload: Item,
 };
 
-const getEnquiresSuccess: (Item) => ActionType = (data) => {
+export const getEnquiresSuccess: (Item) => ActionType = (data) => {
   return {
     type: SET_ENQUIRES_SUCCESS,
     payload: data,
   };
 };
 
-const getEnquiresFailure: (Item) => ActionType = (data) => {
+export const getEnquiresFailure: (Item) => ActionType = (data) => {
   return {
     type: SET_ENQUIRES_FAILED,
     payload: data,
@@ -60,4 +60,8 @@ const apiAction = ({
     },
   };
 };
-export default Object.freeze(getEnquires);
+export default Object.freeze({
+  getEnquires,
+  getEnquiresFailure,
+  getEnquiresSuccess,
+});

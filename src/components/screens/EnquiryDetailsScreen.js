@@ -105,4 +105,5 @@ const mapStateToProps = (state) => {
     item: state?.enquiryReducer?.item,
   };
 };
+
 export default connect(mapStateToProps)(EnquiryDetailsScreen);

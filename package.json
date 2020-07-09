@@ -7,6 +7,7 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
+    "test:watch": "npm test -- --watch",
     "lint": "eslint .",
     "flow": "flow; test $? -eq 0 -o $? -eq 2",
     "flow-stop": "flow stop"
@@ -34,11 +35,22 @@
     "eslint": "^7.4.0",
     "flow-bin": "0.113.0",
     "jest": "^26.1.0",
+    "jest-mock-axios": "^4.2.0",
     "metro-react-native-babel-preset": "^0.60.0",
     "react-test-renderer": "16.11.0",
-    "redux-logger": "^3.0.6"
+    "redux-mock-store": "^1.5.4"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    },
+    "setupFiles": [
+      "./node_modules/react-native-gesture-handler/jestSetup.js"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?react-native|@react-native-community|@react-navigation)"
+    ]
   }
 }

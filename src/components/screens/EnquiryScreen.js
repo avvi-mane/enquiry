@@ -123,4 +123,5 @@ const mapStateToProps = (state: ReducerState): InitialState => {
 const mapDispatchToProps: DispatchItems = {
   getEnquires,
 };
+
 export default connect(mapStateToProps, mapDispatchToProps)(EnquiryScreen);
